@@ -1,9 +1,10 @@
 // TripsScreen.jsx
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import CommonNavBar from '../components/navbar';
 
 const trips = [
   { title: "Trip to Mountain View", date: "2024-01-15" },
@@ -14,7 +15,7 @@ const trips = [
 
 const Tab = createBottomTabNavigator();
 
-const TripsScreen = () => {
+const TripsScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       {/* Header */}
@@ -42,6 +43,9 @@ const TripsScreen = () => {
           </View>
         ))}
       </ScrollView>
+      
+      {/* Common Navigation Bar */}
+      {/* <CommonNavBar navigation={navigation} activeTab="Trips" /> */}
     </SafeAreaView>
   );
 };

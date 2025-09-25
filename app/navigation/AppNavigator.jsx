@@ -12,6 +12,7 @@ import Safety from '../contaner/safety.jsx';
 import Settings from '../contaner/settings.jsx';
 import Trips from '../contaner/tripsScreen.jsx';
 
+import PersonalInfo from '../components/personalInfo.jsx';
 import Login from '../contaner/login.jsx';
 import Signup from '../contaner/signup.jsx';
 
@@ -77,6 +78,7 @@ function AppNavigator() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Features" component={Features} />
+        <Stack.Screen name="PersonalInfo" component={PersonalInfo} />
         <Stack.Screen name="MainApp" component={MainTabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>

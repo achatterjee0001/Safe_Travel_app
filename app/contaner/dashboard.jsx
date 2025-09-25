@@ -1,5 +1,5 @@
+import { Feather, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import React, { useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   Image,
   ScrollView,
@@ -9,10 +9,11 @@ import {
   Text,
   View,
 } from 'react-native';
-import { Feather, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 // --- Reusable Components ---
 import did from '../../assets/id.jpg';
 import map from '../../assets/map.jpg';
+import CommonNavBar from '../components/navbar';
 // A component for list items in "Safety Features" and "Your Safety Score" sections
 const InfoRow = ({ icon, color, title, subtitle, hasToggle, onToggle, toggleValue, hasArrow = true }) => (
   <View style={styles.infoRow}>
@@ -30,7 +31,7 @@ const InfoRow = ({ icon, color, title, subtitle, hasToggle, onToggle, toggleValu
 
 
 // --- Main App Component ---
-export default function App() {
+export default function App({ navigation }) {
   const [isLiveTracking, setIsLiveTracking] = useState(true);
 
   return (
@@ -159,7 +160,9 @@ export default function App() {
           />
         </View>
       </ScrollView>
-
+      
+      {/* Common Navigation Bar */}
+      {/* <CommonNavBar navigation={navigation} activeTab="Dashboard" /> */}
     </SafeAreaView>
   );
 }

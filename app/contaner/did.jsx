@@ -1,17 +1,19 @@
 import React from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
   Image,
   SafeAreaView,
+  ScrollView,
   StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 // To use vector icons, you need to install the package first.
 // For Expo: expo install @expo/vector-icons
 // For bare React Native: npm install react-native-vector-icons
 import { Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import CommonNavBar from '../components/navbar';
 
 
 // --- Reusable Components ---
@@ -31,7 +33,7 @@ const FeatureRow = ({ icon, iconBgColor, title, subtitle, isLink = false }) => (
 
 
 // --- Main App Component ---
-export default function App() {
+export default function App({ navigation }) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
@@ -40,7 +42,7 @@ export default function App() {
         <Text style={styles.headerTitle}>Blockchain ID</Text>
 
         {/* --- User Info Card --- */}
-        <View style={styles.userInfoContainer}>
+        <TouchableOpacity style={styles.userInfoContainer} onPress={() => navigation.navigate('PersonalInfo')}>
             <View style={styles.avatarContainer}>
                 <Image
                     source={{ uri: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' }}
@@ -50,11 +52,12 @@ export default function App() {
                     <Feather name="check" size={12} color="white" />
                 </View>
             </View>
-            <View>
+            <View style={{ flex: 1 }}>
                 <Text style={styles.userName}>Mrs. Amrita Singh</Text>
                 <Text style={styles.userStatus}>Verified</Text>
             </View>
-        </View>
+            <Feather name="chevron-right" size={24} color="#9CA3AF" />
+        </TouchableOpacity>
 
         {/* --- QR Code Section --- */}
         <View style={styles.qrSection}>
@@ -91,6 +94,9 @@ export default function App() {
           />
         </View>
       </ScrollView>
+      
+      {/* Common Navigation Bar */}
+      {/* <CommonNavBar navigation={navigation} activeTab="ID" /> */}
     </SafeAreaView>
   );
 }

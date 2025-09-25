@@ -1,14 +1,16 @@
 // SettingsScreen.jsx
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import CommonNavBar from '../components/navbar';
 
+// Accept navigation prop for navigation
 const settingsData = [
   {
     title: "Account",
     items: [
-      { label: "Personal Information", subtitle: "View and edit your personal information", icon: "account-circle-outline", color: "#00CFFF" },
+      { label: "Personal Information", subtitle: "View and edit your personal information", icon: "account-circle-outline", color: "#00CFFF", link: "PersonalInfo" },
       { label: "Security", subtitle: "Manage your account security", icon: "shield-check-outline", color: "#00C853" },
     ],
   },
@@ -29,7 +31,7 @@ const settingsData = [
   },
 ];
 
-const SettingsScreen = () => {
+const SettingsScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -39,7 +41,15 @@ const SettingsScreen = () => {
           <View key={index} style={styles.section}>
             <Text style={styles.sectionTitle}>{section.title}</Text>
             {section.items.map((item, idx) => (
-              <TouchableOpacity key={idx} style={styles.item}>
+              <TouchableOpacity
+                key={idx}
+                style={styles.item}
+                onPress={
+                  item.link
+                    ? () => navigation.navigate(item.link)
+                    : undefined
+                }
+              >
                 <View style={[styles.iconContainer, { backgroundColor: item.color }]}>
                   <Icon name={item.icon} size={24} color="#fff" />
                 </View>
@@ -52,6 +62,9 @@ const SettingsScreen = () => {
           </View>
         ))}
       </ScrollView>
+      
+      {/* Common Navigation Bar */}
+      {/* <CommonNavBar navigation={navigation} activeTab="Settings" /> */}
     </SafeAreaView>
   );
 };

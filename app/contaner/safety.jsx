@@ -1,16 +1,17 @@
 import { Feather } from '@expo/vector-icons';
 import React from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {
-    Image,
-    ScrollView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Image,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import map from '../../assets/map.jpg'
+import { SafeAreaView } from 'react-native-safe-area-context';
+import map from '../../assets/map.jpg';
+import CommonNavBar from '../components/navbar';
 
 // --- Reusable Components ---
 
@@ -29,7 +30,7 @@ const SecurityCheckItem = ({ icon, iconBgColor, title, subtitle }) => (
 
 
 // --- Main Safety Screen Component ---
-export default function SafetyScreen() {
+export default function SafetyScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
@@ -94,7 +95,9 @@ export default function SafetyScreen() {
         </View>
 
       </ScrollView>
-
+      
+      {/* Common Navigation Bar */}
+      {/* <CommonNavBar navigation={navigation} activeTab="Safety" /> */}
     </SafeAreaView>
   );
 }
