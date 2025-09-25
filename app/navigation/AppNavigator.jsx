@@ -8,8 +8,11 @@ import React from 'react';
 import Dashboard from '../contaner/dashboard.jsx';
 import Did from '../contaner/did.jsx';
 import Features from '../contaner/features.jsx';
-import Login from '../contaner/login.jsx';
 import Safety from '../contaner/safety.jsx';
+import Settings from '../contaner/settings.jsx';
+import Trips from '../contaner/tripsScreen.jsx';
+
+import Login from '../contaner/login.jsx';
 import Signup from '../contaner/signup.jsx';
 
 const Stack = createStackNavigator();
@@ -54,8 +57,8 @@ function MainTabNavigator() {
       <Tab.Screen name="Dashboard" component={Dashboard} />
       <Tab.Screen name="ID" component={Did} />
       <Tab.Screen name="Safety" component={Safety} />
-      <Tab.Screen name="Trips" component={Dashboard} />
-      <Tab.Screen name="Settings" component={Dashboard} />
+      <Tab.Screen name="Trips" component={Trips} />
+      <Tab.Screen name="Settings" component={Settings} />
     </Tab.Navigator>
   );
 }

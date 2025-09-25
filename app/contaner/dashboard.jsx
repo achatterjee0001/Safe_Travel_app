@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   Image,
-  SafeAreaView,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -9,9 +9,6 @@ import {
   Text,
   View,
 } from 'react-native';
-// To use vector icons, you need to install the package first.
-// For Expo: expo install @expo/vector-icons
-// For bare React Native: npm install react-native-vector-icons
 import { Feather, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 // --- Reusable Components ---
 import did from '../../assets/id.jpg';
@@ -54,13 +51,13 @@ export default function App() {
                 style={styles.idCardImage}
               />
             <View style={styles.idCardInfo}>
-               <Text style={styles.idCardName}>Jane Doe</Text>
+               <Text style={styles.idCardName}>Ujwal Singh</Text>
                <Text style={styles.idCardDetails}>ID: 123-456-789</Text>
-               <Text style={styles.idCardDetails}>DOB: 01/01/1990</Text>
+               <Text style={styles.idCardDetails}>DOB: 12/16/2004</Text>
             </View>
           </View>
           <Text style={styles.cardTitle}>Digital ID</Text>
-          <Text style={styles.cardSubtitle}>View your secure ID</Text>
+          <Text style={styles.cardSubtitle}>Secure ID View</Text>
           <Text style={styles.cardVerified}>Verified</Text>
         </View>
 
@@ -68,7 +65,7 @@ export default function App() {
         <View style={styles.section}>
           <View style={styles.scoreHeader}>
             <Text style={styles.sectionTitle}>Your Safety Score</Text>
-            <Text style={styles.scoreText}>85/100</Text>
+            <Text style={styles.scoreText}>90/100</Text>
           </View>
           <View style={styles.progressBarBackground}>
             <View style={styles.progressBarFill} />
@@ -280,7 +277,7 @@ const styles = StyleSheet.create({
     height: 8,
     backgroundColor: '#3B82F6',
     borderRadius: 4,
-    width: '85%',
+    width: '90%',
   },
   mapContainer: {
     borderRadius: 16,

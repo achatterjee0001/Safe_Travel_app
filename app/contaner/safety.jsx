@@ -1,8 +1,8 @@
 import { Feather } from '@expo/vector-icons';
 import React from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {
     Image,
-    SafeAreaView,
     ScrollView,
     StatusBar,
     StyleSheet,
@@ -52,7 +52,7 @@ export default function SafetyScreen() {
 
           {/* Share Location Button */}
           <TouchableOpacity style={styles.shareLocationButton} activeOpacity={0.8}>
-            <View style={styles.shareLocationContent}>+
+            <View style={styles.shareLocationContent}>
               <Feather name="map-pin" size={20} color="white" />
               <View style={styles.shareLocationText}>
                 <Text style={styles.shareLocationTitle}>Share Current Location</Text>
